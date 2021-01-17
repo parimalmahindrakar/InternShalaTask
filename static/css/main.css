@@ -101,5 +101,7 @@ body {
 .admin_to_see_review p {
     padding: 15px;
     border: #777 solid 1px;
+    text-align: justify;
+    text-justify: inter-word;
 }
 
