@@ -1,0 +1,73 @@
+{% extends '../base.html' %}
+{% block content %}
+{% load static %}
+<style>
+    .is-invalid {
+        box-shadow: 0px 0px 10px red !important;
+    }
+    .signup__container__main__signup form input[type="submit"] {
+        background: transparent;
+        box-shadow: 0px 0px 2px orange;
+        cursor: pointer;
+        transition: 0.4s;
+    }
+    .signup__container__main__signup form input[type="submit"]:hover {
+        background-color: orange;
+        color: #fff;
+    }
+    .errorlist {
+        color: red;
+    }
+    .signup__container__main__signup textarea {
+        width: 100%;
+    }
+</style>
+<div class="loading-screen">
+    <div class="loader-wrap">
+        <span class="loader-animation"></span>
+        <div class="loading-text">
+            <span class='letter'>L</span>
+            <span class='letter'>O</span>
+            <span class='letter'>A</span>
+            <span class='letter'>D</span>
+            <span class='letter'>I</span>
+            <span class='letter'>N</span>
+            <span class='letter'>G</span>
+        </div>
+    </div>
+</div>
+<div class="signup__container">
+        <h1 class="signup__container__main__signup__heading">Signup</h1>
+        <form method="POST">
+            <p id="valid-the-username" style="color: red; font-size: 10px; margin-bottom: 5px;">
+                {{form.errors}}
+            </p>
+            <p id="valid-the-email" style="color: red; font-size: 10px; margin-bottom: 5px;"></p> <br>
+            {% csrf_token %}
+            {{form.username}}
+            {{form.email}}
+            {{form.password1}}
+            {{form.password2}}
+            <input id="regisetering__account" type="submit" value="Register">
+        </form>
+        <small>Already have account ? <a href="{% url 'login' %}">Login here.</a></small>
+
+</div>
+
+<script>
+    $("#regisetering__account").click(()=>{
+        console.log("jhghjgjh")
+        $(".loading-screen").show()
+    })
+
+    $("#id_username").attr("placeholder","Username")
+    $("#id_email").attr("placeholder", "Email")
+    $("#id_password1").attr("placeholder", "Enter Password")
+    $("#id_password2").attr("placeholder", "Confirm Password")
+
+</script>
+
+{% endblock %}
+
+
+

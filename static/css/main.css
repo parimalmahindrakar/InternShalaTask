@@ -1,0 +1,105 @@
+body {
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+.main__container {
+    margin-top: 50px;
+}
+.login__page__form,.signup__container {
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 550px;
+    padding: 32px;
+    box-shadow: 0px 0px 2px #777;
+    border-radius: 5px;
+}
+.login__page__form__heading,.signup__container__main__signup__heading {
+    color: rgb(37, 37, 11);
+}
+.login__page__form form ,.signup__container form{
+    display: flex;
+    flex-direction: column;
+}
+.login__page__form form input ,.signup__container form input{
+    margin-bottom: 15px;
+    padding: 8px;
+    border: none;
+    outline: none;
+    box-shadow: 0px 0px 1px #333;
+    border-radius: 3px;
+}
+.login__page__form form input[type=submit]:hover,.signup__container form input[type=submit]:hover {
+    background-color: #11698e !important;
+    cursor: pointer;
+    color: #ffffff;
+}
+.login__page__ask__for__signup__forgotpassowrd {
+    display: flex;
+    justify-content: space-between;
+}
+.taking__user__reviews {
+    width: 55%;
+    margin: 80px auto;
+    display: grid;
+}
+
+@media (max-width:1200px) {
+    .taking__user__reviews {
+        width: 75%;
+    }
+}
+@media (max-width:767px) {
+    .taking__user__reviews {
+        width: 85%;
+    }
+}
+
+
+.taking__user__reviews textarea {
+    justify-self: center;
+    width: 100%;
+    margin: auto;
+    height: 350px;
+    padding: 20px;
+    font-style: arial;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px #333;
+}
+.taking__user__reviews input[type=submit] {
+    width: 100%;
+    padding: 13px 8px;
+    margin-top: 12px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px #333;
+    cursor: pointer;
+}
+.taking__user__reviews h1 {
+    margin-top: 42px;
+    text-align: center;
+    margin-bottom: 63px;
+    color: #555;
+}
+.taking__user__reviews input[type=submit]:hover {
+    background-color: #11698e;
+    color: #fff;
+    font-weight: bold;
+}
+
+.admin_to_see_review {
+    width: 100%;
+    margin-bottom: 35px;
+}
+.admin_to_see_review h2 {
+    color: #222;
+    margin-bottom: 10px;
+}
+.admin_to_see_review p {
+    padding: 15px;
+    border: #777 solid 1px;
+}
+

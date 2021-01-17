@@ -1,0 +1,46 @@
+
+<div class="main__navigations">
+    <div class="main__navigations__div">
+        <ul class="main__navigations__div__ul">
+            <li class="main__navigations__div__li save__from__left" style="font-weight: bold;"><a href="{% url 'home' %}">Home</a></li>
+
+            {% if request.user.is_authenticated %}
+            <li class="main__navigations__div__li "><a href="" class="anchor__remains__same"
+                    style="font-weight: bold;"><i class="fas fa-user"></i> Hello, {{request.user}}.</a></li>
+
+            <li class="main__navigations__div__li">
+                <a href="{% url 'logout' %}" class="anchor__remains__same save__from__right" style="padding-bottom: 0;font-weight: bold;">Logout <i
+                        class="fas fa-sign-out-alt"></i> </a>
+            </li>
+            {% else %}
+
+            <li class="main__navigations__div__li "><a href="{% url 'signup' %}" class="anchor__remains__same" style="font-weight: bold;"><i
+                        class="fas fa-user-plus"></i> Signup</a></li>
+
+            <li class="main__navigations__div__li">
+                <a href="{% url 'login' %}" class="anchor__remains__same save__from__right"
+                    style="padding-bottom: 0;font-weight: bold;">Login <i class="fas fa-sign-out-alt"></i> </a>
+            </li>
+            {% endif %}
+            
+        </ul>
+
+    </div>
+</div>
+
+<div class="mobile__nav__fade__and__show">
+    <div class="mobile__nav__fade__and__show__text">
+        <li><a href="">Home</a></li>
+        <li>
+            <a href="">Categories</a>
+            <div>
+                <p><a href="">Category 1</a></p>
+                <p><a href="">Category 2</a></p>
+                <p><a href="">Category 3</a></p>
+                <p><a href="">Category 4</a></p>
+                <p><a href="">Category 5</a></p>
+            </div>
+        </li>
+    </div>
+</div>
+<div class="mobile__nav__fade__and__show__circle"></div>

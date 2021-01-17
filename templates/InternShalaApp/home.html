@@ -1,0 +1,60 @@
+{% extends '../base.html' %}
+{% block content %}
+
+
+<div class="taking__user__reviews">
+
+    {% if request.user.is_superuser %}
+    {% for review in all_reviews %}
+        <div class="admin_to_see_review">
+            <h2>Username : {{review.user}}</h2>
+            <small>On : {{review.date}}</small> 
+            <p>{{review.review}}</p>
+        </div>
+    {% endfor %}
+    {% else %}
+
+    <h1>Enter your thoughts about proficiency in programming tools/languages.</h1>
+    <textarea id="register_review_textarea"></textarea>
+    <input id="register_review" type="submit" value="Submit ">
+    
+    {% endif %}
+</div>
+
+
+
+<script>
+    $(document).ready(
+        function () {
+            $("#regisetering__account").click(() => {
+                $(".loading-screen").hide()
+            })
+        }
+    )
+    $("#register_review").click(() => {
+        let actual_review = $("#register_review_textarea").val();
+        let user = "{{request.user}}"
+        let email = "{{request.user.email}}"
+        let url = "add_review/"
+        fetch(url, {
+                method: 'POST',
+                headers: {
+                    "Content-Type": "application/json",
+                    'X-CSRFToken': csrftoken
+                },
+                body: JSON.stringify({
+                    'actual_review': actual_review,
+                    'user': user,
+                    'email': email,
+                })
+            }).then((response) => {
+                return response.json()
+            }).then((data) => {
+                console.log('data', data);
+                location.reload()
+        })
+
+    })
+
+</script>
+{% endblock %}
